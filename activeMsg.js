@@ -15,6 +15,9 @@ module.exports = (msg) => {
       if (lowmsg === "kuy") {
         msg.channel.send("ควยไรอะ");
       }
+      if (lowmsg === "sourcecode") {
+        msg.channel.send("https://github.com/Ryonem2/HummaiyanDiscordBot");
+      }
       if (lowmsg === "#help") {
         msg.channel.send("You can ask CamtSchdule - CamtSchdule64 - CamtSchdule65");
       }
