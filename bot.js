@@ -1,9 +1,9 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const auth = require("./auth.json");
-const ytdl = require("ytdl-core");
 
 const activeMsg = require("./activeMsg");
+const openMusic = require("./openMusic");
 
 client.on("ready", () => {
   console.log("Bot Actived");
@@ -17,21 +17,8 @@ client.on("message", async (message) => {
   a = x.split(" ");
   if (a[0] === "bot") {
     if (message.member.voice.channel) {
-      //https://www.youtube.com/watch?v=IZh7oUAOY9U
-      const connection = await message.member.voice.channel.join();
-      const dispatcher = connection.play(ytdl(a[1], { filter: "audioonly" }), {
-        volume: 0.5,
-      });
-      if (message.content === "#stop") {
-        dispatcher.pause();
-      }
-      if (message.content === "#resume") {
-        dispatcher.resume();
-      }
-      dispatcher.on("finish", () => {
-        console.log("Finished playing!");
-        dispatcher.destroy();
-      });
+      openMusic(message);
+
     } else {
       message.reply("You need to join a voice channel first!");
     }

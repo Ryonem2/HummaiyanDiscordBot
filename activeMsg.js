@@ -18,19 +18,19 @@ module.exports = (msg) => {
       if (lowmsg === "#help") {
         msg.channel.send("You can ask CamtSchdule - CamtSchdule64 - CamtSchdule65");
       }
-      if (msg.content === "camtschdule") {
+      if (msg.content === "camtschedule") {
         showEmbed(msg);
       }
       if (msg.content === "camtsch") {
         showEmbed(msg);
       }
-      if (msg.content === "camtschdule64") {
+      if (msg.content === "camtschedule64") {
         showEmbed64(msg);
       }
       if (msg.content === "camtsch64") {
         showEmbed64(msg);
       }
-      if (msg.content === "camtschdule65") {
+      if (msg.content === "camtschedule65") {
         showEmbed65(msg);
       }
       if (msg.content === "camtsch65") {

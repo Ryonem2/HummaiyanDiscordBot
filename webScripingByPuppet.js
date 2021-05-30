@@ -1,6 +1,6 @@
 const puppeteer = require("puppeteer");
 
-const vgmUrl = "https://secretpat3.wixsite.com/teammorchor?fbclid=IwAR11KDzLkxiSZHN2c6JUR0owih_bhNbopbnWIfNEjGTDqoUf6AOW4yKaLrM";
+const vgmUrl = "https://www.youtube.com/watch?v=OVyJUrvtd0M";
 
 (async () => {
   const browser = await puppeteer.launch();
@@ -11,13 +11,18 @@ const vgmUrl = "https://secretpat3.wixsite.com/teammorchor?fbclid=IwAR11KDzLkxiS
   const results = await page.evaluate(() => {
     //our new selector\
     let arr = [];
+    const sectionElems = Array.from(document.querySelectorAll('#info-contents'));
+    // return sectionElems;
+    sectionElems.forEach((sectionElems) => {
+      const len = sectionElems.querySelector("h1:not(.title):not(.style-scope):not(.ytd-video-primary-info-renderer)").innerHTML;
+      return len;
+    });
     // return document.querySelectorAll(".head-one").innerText;
-    const len = document.get('span');
-       for(let i=0;i<len.length;i++){
-           arr.push(len[i].innerHTML);
-       }
+    
+      //  for(let i=0;i<len.length;i++){
+      //      arr.push(len[i].innerHTML);
+      //  }
     // const x = arr.join("/n");
-    return arr;
   });
 
   //     result.forEach(link => console.log(link));
