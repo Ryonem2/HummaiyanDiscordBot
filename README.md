@@ -38,4 +38,5 @@ node bot.js
 - bot {Link}
 - bot #stop
 - bot #resume
-
+- #help
+- showmyavatar
