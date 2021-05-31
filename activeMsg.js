@@ -1,6 +1,7 @@
 const showEmbed = require("./showEmbed");
 const showEmbed64 = require("./showEmbed64");
 const showEmbed65 = require("./showEmbed65");
+const help = require('./embedHelp');
 
 module.exports = (msg) => {
     let lowmsg1 = msg.content;
@@ -18,7 +19,7 @@ module.exports = (msg) => {
         msg.channel.send("https://github.com/Ryonem2/HummaiyanDiscordBot");
       }
       if (lowmsg === "#help") {
-        msg.channel.send("You can ask CamtSchdule - CamtSchdule64 - CamtSchdule65");
+        help(msg);
       }
       if (lowmsg === "camtschedule") {
         showEmbed(msg);

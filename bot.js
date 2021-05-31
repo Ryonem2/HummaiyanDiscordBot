@@ -5,9 +5,13 @@ const auth = require("./auth.json");
 const activeMsg = require("./activeMsg");
 const openMusic = require("./openMusic");
 
-client.on("ready", () => {
-  console.log("Bot Actived");
+client.on("ready", () =>{
+  console.log(`Logged in as ${client.user.tag}!`);
+  client.user.setActivity("#help | Camtsch", {
+    type: "PLAYING",
+  });
 });
+
 client.on("message", (msg) => {
   activeMsg(msg);
 });
