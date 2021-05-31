@@ -7,6 +7,13 @@ npm install
 ```
 > On token you can take it from discord/dev
 
+## Run bot 24/7
+run bot 24/7 by use command :
+```sh
+pm2 start bot.js --watch
+```
+--watch is refresh and save new version when you hit Ctrl+S (Save)
+
 ## Dependencies JSON
 - @discordjs/opus
 - discord.js
