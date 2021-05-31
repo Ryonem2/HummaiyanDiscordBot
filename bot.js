@@ -60,6 +60,7 @@ async function gPlay(message, serverQueue) {
   };
 
   if (!serverQueue) {
+    //queue con create if no song playing
     const queueContruct = {
       textChannel: message.channel,
       voiceChannel: voiceChannel,
@@ -84,7 +85,7 @@ async function gPlay(message, serverQueue) {
     }
   } else {
     serverQueue.songs.push(song);
-    return message.channel.send(`${song.title} has been added to the queue!`);
+    return message.channel.send(`${song.title} has been added to the queue! :thumbsup:`);
   }
 }
 
@@ -95,6 +96,7 @@ function skip(message, serverQueue) {
   if (!serverQueue)
     return message.channel.send("There is no song that I could skip!");
   serverQueue.connection.dispatcher.end();
+  message.channel.send("Skipped :fast_forward:");
 }
 
 //stop song
@@ -128,7 +130,7 @@ function play(guild, song) {
     })
     .on("error", (error) => console.error(error));
   dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
-  serverQueue.textChannel.send(`Playing: **${song.title}**`);
+  serverQueue.textChannel.send(`:arrow_forward: Playing: **${song.title}** :sparkles:`);
 }
 
 client.login(token);

@@ -17,7 +17,7 @@ module.exports = (msg) => {
         msg.reply(msg.author.displayAvatarURL());
       }
       if (lowmsg === "kuy") {
-        msg.channel.send("ควยไรอะ");
+        msg.channel.send("ควยไรอะ :full_moon:");
       }
       if (lowmsg === "sourcecode") {
         msg.channel.send("https://github.com/Ryonem2/HummaiyanDiscordBot");
