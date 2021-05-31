@@ -2,12 +2,16 @@ const showEmbed = require("./showEmbed");
 const showEmbed64 = require("./showEmbed64");
 const showEmbed65 = require("./showEmbed65");
 const help = require('./embedHelp');
+const queue = new Map();
 
 module.exports = (msg) => {
     let lowmsg1 = msg.content;
     let lowmsg = lowmsg1.toLowerCase();
     if (lowmsg === "hello") {
         msg.reply("Hello!");
+      }
+      if (lowmsg === "test") {
+        console.log(queue.get(msg.guild.id));
       }
       if (lowmsg === "showmyavatar") {
         msg.reply(msg.author.displayAvatarURL());
