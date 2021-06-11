@@ -12,8 +12,10 @@ module.exports = (msg) => {
        .addField('Watch Schedule Type',"```"+ 'CamtSchedule / Camtsch'+"```")
        .addField('PlayMusic', "```"+'#play [any youtube link]'+"```",true)
        .addField('Stop n Skip', "```"+'#stop/#skip'+"```",true)
+       .addField('View Incoming Class', "```"+'Class?'+"```",true)
        .addField('View Bot Source', "```"+'Sourcecode'+"```",true)
        .setTimestamp()
        .setFooter('Updated Since 31/5/2021')
-        msg.channel.send(emb);
+       console.log(`sent help request by ${msg.author}`);
+   msg.channel.send(emb);
 }
