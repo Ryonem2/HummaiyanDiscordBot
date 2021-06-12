@@ -4,6 +4,7 @@ const showEmbed65 = require("./showEmbed65");
 const help = require('./embedHelp');
 const displayClass = require('./displayFutureClass');
 const queue = new Map();
+const classschedule = require("./ClassSchedule");
 
 module.exports = (msg) => {
     let lowmsg1 = msg.content;
@@ -26,7 +27,8 @@ module.exports = (msg) => {
         msg.channel.send("https://github.com/Ryonem2/HummaiyanDiscordBot");
       }
       if (lowmsg === "classschedule"){
-        msg.channel.send("https://o365cmu-my.sharepoint.com/:x:/g/personal/theerakarn_maiw_cmu_ac_th/EVTbAsh2vw9MmT66yLjcfSUBE5NNp5_R-RYgrK7CM9gKEw?e=oycy0n");
+        classschedule(msg);
+        console.log(`classschedule called request by ${msg.author}`);
       }
       if (lowmsg === "#help") {
         help(msg);

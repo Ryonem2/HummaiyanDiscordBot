@@ -41,8 +41,8 @@ function cal(day, min, hr) {
       } else {
         return "Next is MAN AND THE MODERN WORLD on 14:30 at HB6240";
       }
-    }else {
-        return "No More Class Today";
+    } else {
+      return "No More Class Today";
     }
   }
   if (day == 3) {
@@ -78,7 +78,7 @@ function cal(day, min, hr) {
         return "Now studying CITIZENSHIP and Next is MAN AND THE MODERN WORLD on 14:30 at HB6240";
       }
     } else {
-        return "No More Class Today";
+      return "No More Class Today";
     }
   }
   if (day == 6) {
@@ -87,13 +87,24 @@ function cal(day, min, hr) {
   }
 }
 
-module.exports = async (msg) => {
-  var d = new Date();
-  var min = d.getMinutes();
-  var hr = d.getHours();
-  const day = d.getDay();
-  console.log(`day = ${day} hr = ${hr} mon = ${min}`);
-  res = await cal(day, min, hr);
+const Discord = require("discord.js");
+var d = new Date();
+var min = d.getMinutes();
+var hr = d.getHours();
+const day = d.getDay();
+// console.log(`day = ${day} hr = ${hr} mon = ${min}`);
+// res = await cal(day, min, hr);
 
-  msg.channel.send(res);
+module.exports = (msg) => {
+  const emb = new Discord.MessageEmbed()
+    .setTitle("Class Schedule")
+    .setColor("#0099ff")
+    .setAuthor("Maiyai Command", "https://i.imgur.com/W0SR6Rr.jpg")
+    .setThumbnail("https://i.imgur.com/XNMs97I.png")
+    .addField("Next Class", "```" + cal(day, min, hr) + "```")
+    .addField("All Schedule Here or Scan QR Code","All Schedule [ClickHere!!](https://qrgo.page.link/SbKHj" , true)
+    .setTimestamp()
+    .setFooter("Updated Since 31/5/2021");
+  console.log(`sent help request by ${msg.author}`);
+  msg.channel.send(emb);
 };
