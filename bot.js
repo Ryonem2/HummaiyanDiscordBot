@@ -35,9 +35,6 @@ client.on("message", async (message) => {
     stop(message, serverQueue);
     return;
   } 
-  // else {
-    // message.channel.send("Command Wrong");
-  // }
 });
 
 // run
