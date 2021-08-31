@@ -1,15 +1,10 @@
-a = true;
-b = false;
+let pets = new Set(["Cat", "Dog", "Hamster"]);
+pets["species"] = "mammals";
 
-if (a){ // a == true
-    console.log("a");
+for (let pet in pets) {
+   console.log(pet); // "species"
 }
-if (!a){ //a == false
-    console.log("!a");
-}
-if (b){ // b == true
-    console.log("b");
-}
-if (!b){ // b == false
-    console.log("!b");
+
+for (let pet of pets) {
+    console.log(pet); // "Cat", "Dog", "Hamster"
 }

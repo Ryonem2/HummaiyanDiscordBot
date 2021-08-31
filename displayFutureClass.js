@@ -6,11 +6,11 @@ function cal(day, min, hr) {
   if (day == 1) {
     //mon
     if (hr >= 0 && hr <= 7) {
-      return "Next INTRO TO DIGITAL BUSINESS";
+      return "Next INTRO TO DIGITAL BUSINESS 8:00";
     } else if (hr >= 8 && hr <= 9) {
       return "Now studying INTRO TO DIGITAL BUSINESS and Next is  MODERN LIFE ANIMATION on 13:00 at RB5301 Room";
     } else if (hr >= 10 && hr <= 12) {
-      return "Next MODERN LIFE ANIMATION";
+      return "Next MODERN LIFE ANIMATION on 13:00";
     } else if (hr >= 13 && hr <= 15) {
       if (hr == 13) {
         return "Now studying MODERN LIFE ANIMATION and Next is FUNDAMENTAL ENG on 14:30";
@@ -109,7 +109,9 @@ function cal(day, min, hr) {
   }
 }
 
-module.exports = async (msg) => {
+module.exports = async (
+  
+) => {
   var d = new Date();
   var min = d.getMinutes();
   var hr = d.getHours();
